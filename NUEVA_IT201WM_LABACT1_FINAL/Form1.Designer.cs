@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.combVehicleType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAssignedSlot = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtHoursParked = new System.Windows.Forms.TextBox();
             this.txtPlateNumber = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.btnRegisterVehicle = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button37 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.button34 = new System.Windows.Forms.Button();
@@ -92,18 +94,16 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.combDiscount = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button40 = new System.Windows.Forms.Button();
-            this.button39 = new System.Windows.Forms.Button();
-            this.button38 = new System.Windows.Forms.Button();
+            this.txtPayAmount = new System.Windows.Forms.TextBox();
+            this.btnClearForm = new System.Windows.Forms.Button();
+            this.btnGenerateReceipt = new System.Windows.Forms.Button();
+            this.btnProcessPayment = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.combVehicleType = new System.Windows.Forms.ComboBox();
-            this.button37 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -121,7 +121,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtAssignedSlot);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtHoursParked);
             this.groupBox1.Controls.Add(this.txtPlateNumber);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
@@ -129,6 +129,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vehicle Registration";
+            // 
+            // combVehicleType
+            // 
+            this.combVehicleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combVehicleType.FormattingEnabled = true;
+            this.combVehicleType.Items.AddRange(new object[] {
+            "Car",
+            "Motorcycle",
+            "Van"});
+            this.combVehicleType.Location = new System.Drawing.Point(14, 106);
+            this.combVehicleType.Name = "combVehicleType";
+            this.combVehicleType.Size = new System.Drawing.Size(164, 21);
+            this.combVehicleType.TabIndex = 10;
             // 
             // label4
             // 
@@ -173,12 +186,12 @@
             this.txtAssignedSlot.Size = new System.Drawing.Size(164, 20);
             this.txtAssignedSlot.TabIndex = 3;
             // 
-            // textBox3
+            // txtHoursParked
             // 
-            this.textBox3.Location = new System.Drawing.Point(14, 162);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 20);
-            this.textBox3.TabIndex = 2;
+            this.txtHoursParked.Location = new System.Drawing.Point(14, 162);
+            this.txtHoursParked.Name = "txtHoursParked";
+            this.txtHoursParked.Size = new System.Drawing.Size(164, 20);
+            this.txtHoursParked.TabIndex = 2;
             // 
             // txtPlateNumber
             // 
@@ -283,6 +296,20 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(357, 353);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // button37
+            // 
+            this.button37.BackColor = System.Drawing.Color.Lime;
+            this.button37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button37.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button37.Location = new System.Drawing.Point(287, 303);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(67, 47);
+            this.button37.TabIndex = 34;
+            this.button37.Text = "G5";
+            this.button37.UseVisualStyleBackColor = false;
+            this.button37.Click += new System.EventHandler(this.selectParkingSlot);
             // 
             // button36
             // 
@@ -927,12 +954,12 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.combDiscount);
             this.groupBox6.Controls.Add(this.label22);
-            this.groupBox6.Controls.Add(this.textBox6);
-            this.groupBox6.Controls.Add(this.button40);
-            this.groupBox6.Controls.Add(this.button39);
-            this.groupBox6.Controls.Add(this.button38);
+            this.groupBox6.Controls.Add(this.txtPayAmount);
+            this.groupBox6.Controls.Add(this.btnClearForm);
+            this.groupBox6.Controls.Add(this.btnGenerateReceipt);
+            this.groupBox6.Controls.Add(this.btnProcessPayment);
             this.groupBox6.Controls.Add(this.textBox5);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label20);
@@ -944,18 +971,18 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Payments and Receipts";
             // 
-            // comboBox1
+            // combDiscount
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.combDiscount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combDiscount.FormattingEnabled = true;
+            this.combDiscount.Items.AddRange(new object[] {
             "No Discount",
             "Employee",
             "Senior Citizen"});
-            this.comboBox1.Location = new System.Drawing.Point(86, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 9;
+            this.combDiscount.Location = new System.Drawing.Point(86, 26);
+            this.combDiscount.Name = "combDiscount";
+            this.combDiscount.Size = new System.Drawing.Size(100, 21);
+            this.combDiscount.TabIndex = 9;
             // 
             // label22
             // 
@@ -966,39 +993,39 @@
             this.label22.TabIndex = 8;
             this.label22.Text = "- - -";
             // 
-            // textBox6
+            // txtPayAmount
             // 
-            this.textBox6.Location = new System.Drawing.Point(86, 54);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 7;
+            this.txtPayAmount.Location = new System.Drawing.Point(86, 54);
+            this.txtPayAmount.Name = "txtPayAmount";
+            this.txtPayAmount.Size = new System.Drawing.Size(100, 20);
+            this.txtPayAmount.TabIndex = 7;
             // 
-            // button40
+            // btnClearForm
             // 
-            this.button40.Location = new System.Drawing.Point(19, 339);
-            this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(167, 23);
-            this.button40.TabIndex = 6;
-            this.button40.Text = "Clear Form";
-            this.button40.UseVisualStyleBackColor = true;
+            this.btnClearForm.Location = new System.Drawing.Point(19, 339);
+            this.btnClearForm.Name = "btnClearForm";
+            this.btnClearForm.Size = new System.Drawing.Size(167, 23);
+            this.btnClearForm.TabIndex = 6;
+            this.btnClearForm.Text = "Clear Form";
+            this.btnClearForm.UseVisualStyleBackColor = true;
             // 
-            // button39
+            // btnGenerateReceipt
             // 
-            this.button39.Location = new System.Drawing.Point(19, 315);
-            this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(167, 23);
-            this.button39.TabIndex = 5;
-            this.button39.Text = "Generate Receipt";
-            this.button39.UseVisualStyleBackColor = true;
+            this.btnGenerateReceipt.Location = new System.Drawing.Point(19, 315);
+            this.btnGenerateReceipt.Name = "btnGenerateReceipt";
+            this.btnGenerateReceipt.Size = new System.Drawing.Size(167, 23);
+            this.btnGenerateReceipt.TabIndex = 5;
+            this.btnGenerateReceipt.Text = "Generate Receipt";
+            this.btnGenerateReceipt.UseVisualStyleBackColor = true;
             // 
-            // button38
+            // btnProcessPayment
             // 
-            this.button38.Location = new System.Drawing.Point(19, 291);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(167, 23);
-            this.button38.TabIndex = 4;
-            this.button38.Text = "Process Payment";
-            this.button38.UseVisualStyleBackColor = true;
+            this.btnProcessPayment.Location = new System.Drawing.Point(19, 291);
+            this.btnProcessPayment.Name = "btnProcessPayment";
+            this.btnProcessPayment.Size = new System.Drawing.Size(167, 23);
+            this.btnProcessPayment.TabIndex = 4;
+            this.btnProcessPayment.Text = "Process Payment";
+            this.btnProcessPayment.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
@@ -1035,33 +1062,6 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Discount";
             // 
-            // combVehicleType
-            // 
-            this.combVehicleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combVehicleType.FormattingEnabled = true;
-            this.combVehicleType.Items.AddRange(new object[] {
-            "Car",
-            "Motorcycle",
-            "Van"});
-            this.combVehicleType.Location = new System.Drawing.Point(14, 106);
-            this.combVehicleType.Name = "combVehicleType";
-            this.combVehicleType.Size = new System.Drawing.Size(164, 21);
-            this.combVehicleType.TabIndex = 10;
-            // 
-            // button37
-            // 
-            this.button37.BackColor = System.Drawing.Color.Lime;
-            this.button37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button37.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button37.Location = new System.Drawing.Point(287, 303);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(67, 47);
-            this.button37.TabIndex = 34;
-            this.button37.Text = "G5";
-            this.button37.UseVisualStyleBackColor = false;
-            this.button37.Click += new System.EventHandler(this.selectParkingSlot);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1094,7 +1094,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtAssignedSlot;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtHoursParked;
         private System.Windows.Forms.TextBox txtPlateNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -1159,12 +1159,12 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox combDiscount;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button40;
-        private System.Windows.Forms.Button button39;
-        private System.Windows.Forms.Button button38;
+        private System.Windows.Forms.TextBox txtPayAmount;
+        private System.Windows.Forms.Button btnClearForm;
+        private System.Windows.Forms.Button btnGenerateReceipt;
+        private System.Windows.Forms.Button btnProcessPayment;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox combVehicleType;
         private System.Windows.Forms.Button button37;

@@ -11,6 +11,7 @@ namespace NUEVA_IT201WM_LABACT1_FINAL
         public string SlotID { get; set; }
         public bool IsOccupied => !string.IsNullOrEmpty(VehicleType);
 
+        public string PlateNumber { get; set; }
         public string VehicleType { get; set; }
         public int NumberOfHoursParked { get; set; }
         public decimal ParkingRate { get; set; }
