@@ -35,13 +35,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtAssignedSlot = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPlateNumber = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpdateStatus = new System.Windows.Forms.Button();
+            this.btnRegisterVehicle = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button37 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.button34 = new System.Windows.Forms.Button();
@@ -103,7 +102,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.combVehicleType = new System.Windows.Forms.ComboBox();
+            this.button37 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -115,14 +115,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.combVehicleType);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtAssignedSlot);
             this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtPlateNumber);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 266);
@@ -180,17 +180,17 @@
             this.textBox3.Size = new System.Drawing.Size(164, 20);
             this.textBox3.TabIndex = 2;
             // 
-            // textBox1
+            // txtPlateNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(14, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtPlateNumber.Location = new System.Drawing.Point(14, 50);
+            this.txtPlateNumber.Name = "txtPlateNumber";
+            this.txtPlateNumber.Size = new System.Drawing.Size(164, 20);
+            this.txtPlateNumber.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnUpdateStatus);
+            this.groupBox2.Controls.Add(this.btnRegisterVehicle);
             this.groupBox2.Location = new System.Drawing.Point(13, 285);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
@@ -198,23 +198,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Actions";
             // 
-            // button2
+            // btnUpdateStatus
             // 
-            this.button2.Location = new System.Drawing.Point(20, 53);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 28);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Update Status";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdateStatus.Location = new System.Drawing.Point(20, 53);
+            this.btnUpdateStatus.Name = "btnUpdateStatus";
+            this.btnUpdateStatus.Size = new System.Drawing.Size(143, 28);
+            this.btnUpdateStatus.TabIndex = 1;
+            this.btnUpdateStatus.Text = "Update Status";
+            this.btnUpdateStatus.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnRegisterVehicle
             // 
-            this.button1.Location = new System.Drawing.Point(20, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 28);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Register Vehicle";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRegisterVehicle.Location = new System.Drawing.Point(20, 23);
+            this.btnRegisterVehicle.Name = "btnRegisterVehicle";
+            this.btnRegisterVehicle.Size = new System.Drawing.Size(143, 28);
+            this.btnRegisterVehicle.TabIndex = 0;
+            this.btnRegisterVehicle.Text = "Register Vehicle";
+            this.btnRegisterVehicle.UseVisualStyleBackColor = true;
+            this.btnRegisterVehicle.Click += new System.EventHandler(this.btnRegisterVehicle_Click);
             // 
             // groupBox3
             // 
@@ -282,20 +283,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(357, 353);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // button37
-            // 
-            this.button37.BackColor = System.Drawing.Color.Lime;
-            this.button37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button37.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button37.Location = new System.Drawing.Point(287, 303);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(67, 47);
-            this.button37.TabIndex = 34;
-            this.button37.Text = "G5";
-            this.button37.UseVisualStyleBackColor = false;
-            this.button37.Click += new System.EventHandler(this.selectParkingSlot);
             // 
             // button36
             // 
@@ -1048,18 +1035,32 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Discount";
             // 
-            // comboBox2
+            // combVehicleType
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.combVehicleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combVehicleType.FormattingEnabled = true;
+            this.combVehicleType.Items.AddRange(new object[] {
             "Car",
             "Motorcycle",
             "Van"});
-            this.comboBox2.Location = new System.Drawing.Point(14, 106);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(164, 21);
-            this.comboBox2.TabIndex = 10;
+            this.combVehicleType.Location = new System.Drawing.Point(14, 106);
+            this.combVehicleType.Name = "combVehicleType";
+            this.combVehicleType.Size = new System.Drawing.Size(164, 21);
+            this.combVehicleType.TabIndex = 10;
+            // 
+            // button37
+            // 
+            this.button37.BackColor = System.Drawing.Color.Lime;
+            this.button37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button37.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button37.Location = new System.Drawing.Point(287, 303);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(67, 47);
+            this.button37.TabIndex = 34;
+            this.button37.Text = "G5";
+            this.button37.UseVisualStyleBackColor = false;
+            this.button37.Click += new System.EventHandler(this.selectParkingSlot);
             // 
             // Form1
             // 
@@ -1073,7 +1074,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Smart Parking Management System";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1094,18 +1095,17 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtAssignedSlot;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPlateNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdateStatus;
+        private System.Windows.Forms.Button btnRegisterVehicle;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button37;
         private System.Windows.Forms.Button button36;
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Button button34;
@@ -1166,7 +1166,8 @@
         private System.Windows.Forms.Button button39;
         private System.Windows.Forms.Button button38;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox combVehicleType;
+        private System.Windows.Forms.Button button37;
     }
 }
 
